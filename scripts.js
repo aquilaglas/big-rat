@@ -2,7 +2,7 @@
 const menuToggle = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
-/*menuToggle.addEventListener('click', () => {
+menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
@@ -10,10 +10,12 @@ const navLinks = document.getElementById('nav-links');
 function showSection(sectionId) {
     const sections = document.querySelectorAll('section');
 
+    // Hide all sections
     sections.forEach(section => {
         section.hidden = true;
     });
 
+    // Show the selected section
     document.getElementById(sectionId).hidden = false;
 }
 
@@ -25,4 +27,4 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         const sectionId = event.target.getAttribute('data-section');
         showSection(sectionId);
     });
-});*/
+});
