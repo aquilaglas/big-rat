@@ -92,6 +92,10 @@ header {
         background-color: #333;
     }
 
+    .nav-links.active {
+        display: flex; /* Afficher le menu lorsqu'il est activé */
+    }
+
     .nav-links li {
         margin: 0;
         text-align: center;
