@@ -63,7 +63,7 @@ function fetchAndDisplayDogImage() {
 
 function wait(seconds) {
     return new Promise(resolve => {
-        setTimeout(resolve, seconds * 1000); // Convertir les secondes en millisecondes
+        setTimeout(resolve, seconds * 10000); // Convertir les secondes en millisecondes
     });
 }
 
