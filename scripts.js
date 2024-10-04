@@ -29,3 +29,38 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         showSection(sectionId);
     });
 });
+
+// Fonction pour récupérer une image de chien aléatoire depuis l'API et l'afficher
+function fetchAndDisplayDogImage() {
+    // URL de l'API
+    const apiUrl = 'https://dog.ceo/api/breeds/image/random';
+
+    // Utilisation de fetch pour récupérer les données de l'API
+    fetch(apiUrl)
+        .then(response => response.json())  // Convertir la réponse en JSON
+        .then(data => {
+            // Créer ou sélectionner l'élément image
+            const imgElement = document.getElementById('dogImage');
+            if (!imgElement) {
+                // Si l'image n'existe pas encore, la créer
+                const newImgElement = document.createElement('img');
+                newImgElement.id = 'dogImage';  // Donner un id à l'image
+                newImgElement.src = data.message;  // Récupérer l'URL de l'image dans la réponse API
+                newImgElement.alt = 'Image aléatoire de chien';
+                newImgElement.style.width = '300px';  // Optionnel: régler la taille de l'image
+
+                // Ajouter l'image à la section Accueil (ou un autre conteneur)
+                document.getElementById('home-section').appendChild(newImgElement);
+            } else {
+                // Si l'image existe déjà, mettre à jour la source
+                imgElement.src = data.message;
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération de l\'image:', error);
+        });
+}
+
+// Appeler la fonction quand vous accédez à la section Accueil
+document.getElementById('nav-home').addEventListener('click', fetchAndDisplayDogImage);
+
