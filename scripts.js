@@ -17,6 +17,7 @@ function showSection(sectionId) {
 
     // Show the selected section
     document.getElementById(sectionId).hidden = false;
+    navLinks.classList.toggle('inactive');
 }
 
 // Add event listeners to menu links
