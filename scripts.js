@@ -62,5 +62,4 @@ function fetchAndDisplayDogImage() {
 }
 
 // Appeler la fonction quand vous accédez à la section Accueil
-document.getElementById('nav-home').addEventListener('click', fetchAndDisplayDogImage);
-
+fetchAndDisplayDogImage();
