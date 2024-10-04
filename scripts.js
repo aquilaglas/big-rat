@@ -61,5 +61,15 @@ function fetchAndDisplayDogImage() {
         });
 }
 
+function wait(seconds) {
+    return new Promise(resolve => {
+        setTimeout(resolve, seconds * 1000); // Convertir les secondes en millisecondes
+    });
+}
+
 // Appeler la fonction quand vous accédez à la section Accueil
+fetchAndDisplayDogImage();
+wait(10).then(() => {
+    console.log("10 secondes se sont écoulées !");
+});
 fetchAndDisplayDogImage();
