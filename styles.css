@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'MaPoliceCustom';
-    src: url('fonts/the_drunk_designer.otf') format('otf'),
-    url('fonts/the_drunk_designer.otf') format('otf');
+    src: url('fonts/the_drunk_designer.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
