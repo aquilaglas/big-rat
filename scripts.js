@@ -50,7 +50,7 @@ function fetchAndDisplayDogImage() {
                 newImgElement.style.width = '300px';  // Optionnel: régler la taille de l'image
 
                 // Ajouter l'image à la section Accueil (ou un autre conteneur)
-                document.getElementById('home-section').appendChild(newImgElement);
+                document.getElementById('home').appendChild(newImgElement);
             } else {
                 // Si l'image existe déjà, mettre à jour la source
                 imgElement.src = data.message;
