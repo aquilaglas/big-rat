@@ -93,7 +93,7 @@ header {
     }
 
     .nav-links.active {
-        display: flex; /* Afficher le menu lorsqu'il est activé */
+        display: flex;
     }
 
     .nav-links li {
