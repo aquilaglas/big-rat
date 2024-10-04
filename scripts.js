@@ -17,7 +17,6 @@ function showSection(sectionId) {
 
     // Show the selected section
     document.getElementById(sectionId).hidden = false;
-    navLinks.classList.toggle('inactive');
 }
 
 // Add event listeners to menu links
@@ -27,5 +26,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
         const sectionId = event.target.getAttribute('data-section');
         showSection(sectionId);
+        navLinks.classList.remove('active');
     });
 });
