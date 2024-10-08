@@ -10,28 +10,32 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
 <header>
     <nav class="navbar">
         <div class="logo">BMAS</div>
-        <div class="menu-toggle" id="mobile-menu">☰</div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#home" data-section="home">Accueil</a></li>
-            <li><a href="#about" data-section="about">Qui sommes-nous</a></li>
-            <li><a href="#contact" data-section="contact">Contact</a></li>
-        </ul>
+        <div class="nav-right">
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" data-section="home">Accueil</a></li>
+                <li><a href="#about" data-section="about">Qui sommes-nous</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="user-logo">
+                <img src="./pictures/icons/utilisateur.png" alt="User Logo" id="user-icon" class="user-icon"/>
+            </div>
+        </div>
     </nav>
 </header>
 
-<!-- Sections -->
 <section id="home" class="section">
-    <h1>Bienvenue à notre entreprise</h1>
+    <h1>Bienvenue dans notre entreprise</h1>
     <p>Nous sommes fiers de vous offrir des services de haute qualité pour satisfaire tous vos besoins.</p>
 </section>
 
 <section id="about" class="section" hidden="true">
     <h2>Qui sommes-nous</h2>
-    <p>Notre entreprise se spécialise dans l'innovation et le service client, avec des années d'expérience dans notre domaine.</p>
+    <p>Notre entreprise se spécialise dans l'innovation et le service client, avec des années d'expérience dans notre
+        domaine.</p>
 </section>
 
 <section id="contact" class="section" hidden="true">
@@ -40,5 +44,41 @@
     <p>Téléphone: +33 1 23 45 67 89</p>
 </section>
 
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Connexion</h2>
+        <form id="loginForm">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required>
+
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+
+            <button id="loginSubmit" type="submit">Se connecter</button>
+        </form>
+        <button id="openRegisterModal" class="register-btn">S'inscrire</button>
+    </div>
+</div>
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Créer un compte</h2>
+        <form id="registerForm">
+            <label for="reg-username">Nom d'utilisateur</label>
+            <input type="text" id="reg-username" name="reg-username" placeholder="Entrez votre nom d'utilisateur"
+                   required>
+
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" name="reg-email" placeholder="Entrez votre email" required>
+
+            <label for="reg-password">Mot de passe</label>
+            <input type="password" id="reg-password" name="reg-password" placeholder="Entrez votre mot de passe"
+                   required>
+
+            <button id="registerSubmit" type="submit">S'inscrire</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
