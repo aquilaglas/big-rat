@@ -78,7 +78,7 @@ loginSubmit.addEventListener("click", (event) => {
         password: password
     };
 
-    fetch('https://fat-rat.vercel.app/user/login', {
+    fetch('https://fat-rat.vercel.app/user/login/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -112,7 +112,7 @@ registerSubmit.addEventListener("click", (event) => {
         password: regPassword
     };
 
-    fetch('https://fat-rat.vercel.app/user/register', {
+    fetch('https://fat-rat.vercel.app/user/register/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -132,3 +132,28 @@ registerSubmit.addEventListener("click", (event) => {
             console.error('Erreur:', error);
         });
 });
+
+function fetchAndDisplayDogImage() {
+    const apiUrl = 'https://fat-rat.vercel.app/';
+
+    fetch(apiUrl)
+        //.then(response => response.json())
+        .then(async data => {
+            console.log(data);
+            const imgElement = document.getElementById('dogImage');
+            if (!imgElement) {
+                const newImgElement = document.createElement('p');
+                newImgElement.id = 'texte';
+                newImgElement.textContent = await data.text();
+
+                document.getElementById('home').appendChild(newImgElement);
+            } else {
+                imgElement.textContent = data.json();
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération de l\'image:', error);
+        });
+}
+
+fetchAndDisplayDogImage();
